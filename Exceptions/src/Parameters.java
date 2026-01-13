@@ -12,7 +12,7 @@ public class Parameters {
         Matcher matcher = pattern.matcher(login); boolean result = matcher.matches();
         if (!result || login.length()>=20) throw new WrongLoginException(login);
         matcher = pattern.matcher(password); result = matcher.matches();
-        if ((!result || password.length()>=20) || (!password.equals(confirmPassword))) throw new WrongPasswordException(password, confirmPassword);
+        if ((!result || password.length()>=20) || (!password.equals(confirmPassword))) throw new WrongPasswordException(password);
         this.login = login;   this.password = password;
         this.confirmPassword = confirmPassword;
     }

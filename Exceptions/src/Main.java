@@ -36,7 +36,7 @@ class WrongLoginException extends Exception{
 }
 
 class WrongPasswordException extends Exception{
-    WrongPasswordException(String password, String confirmPassword){
+    WrongPasswordException(String password){
         String message;  message = STR."В password должны быть только латинские буквы, цифры и _ . Длина password -не более 20. Нынешний password - \{password}";
         super(message);
     }

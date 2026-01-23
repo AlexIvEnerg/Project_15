@@ -7,10 +7,10 @@ public class FileInputOutputStreamDemo {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         File file = new File("D:\\Обучение Java\\IdeaProjects\\Project_15\\Input-output_streams" +
-                "\\src\\io\\a.txt");
+                "\\src\\io\\a_file.txt");
 
-        try(InputStream input = new FileInputStream(file);
-        OutputStream output = new FileOutputStream(file, true)) {
+        try(OutputStream output = new FileOutputStream(file, true);
+            InputStream input = new FileInputStream(file)) {
             char[] symbols = {'a','b','c'};
             int i;
             for (char symb : symbols) {
@@ -19,7 +19,7 @@ public class FileInputOutputStreamDemo {
             }
             int size = input.available();
             for (int e=0; e<size; e++) {
-                System.out.print(input.read() + " ");
+                System.out.print((char) input.read() + " ");
             }
         }  catch (IOException ex) {
             System.out.println("Exception");
